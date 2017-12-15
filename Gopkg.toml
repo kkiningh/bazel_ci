@@ -1,0 +1,8 @@
+
+[[constraint]]
+  name = "gopkg.in/src-d/go-git.v4"
+  revision = "757a26038e5404f94523ba07d017d1b38bcbf6dd"
+
+[[constraint]]
+  branch = "master"
+  name = "github.com/gin-gonic/gin"

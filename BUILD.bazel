@@ -1,0 +1,21 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "go_default_library",
+    srcs = ["main.go"],
+    importpath = "github.com/kkiningh/bazel_ci",
+    visibility = ["//visibility:private"],
+    deps = [
+        "//vendor/github.com/gin-gonic/gin:go_default_library",
+        "//vendor/github.com/jinzhu/gorm:go_default_library",
+        "//vendor/github.com/jinzhu/gorm/dialects/sqlite:go_default_library",
+        "//vendor/gopkg.in/src-d/go-git.v4:go_default_library",
+    ],
+)
+
+go_binary(
+    name = "bazel_ci",
+    embed = [":go_default_library"],
+    importpath = "github.com/kkiningh/bazel_ci",
+    visibility = ["//visibility:public"],
+)
